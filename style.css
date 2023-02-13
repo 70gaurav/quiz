@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 0;
+    height: 20%;
+}
+.head h2:last-of-type{
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.slide1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: aquamarine;
+    height: 80%;
+}
+.knowledge,.bulb{
+    width: 40%;
+}
+.knowledge span{
+    color: red;
+}
+.knowledge h1{
+    margin:2rem 0;
+    width: 60%;
+    font-size: 35px;
+}
+.knowledge a{
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+ .input{
+    position: absolute;
+    top:30%;
+    left:35% ;
+    background-color: rgb(235, 132, 149);
+    padding:20px;
+    font-size: 20px;
+    display: none;
+}
+ .input input{
+    height:50px;
+    width:400px;
+    margin-bottom: 30px;
+}
+.user{
+    display: none;
+}
