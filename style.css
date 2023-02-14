@@ -61,3 +61,77 @@
 .user{
     display: none;
 }
+.slide2{
+    background-color: rgb(174, 170, 170);
+    display: none;
+    height: 100vh;
+}
+.slide2 .quiz{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background-color: lightsteelblue;
+}
+.slide2 .quiz ul{
+    display: flex;
+    font-size: 20px;
+    list-style: none;
+}
+.slide2 .quiz ul li a{
+    text-decoration: none;
+    color:black;
+    padding:10px;
+
+}
+.slide2 .welcome{
+    padding:2rem;
+}
+.slide2 .welcome h1,h2{
+    text-align: center;
+    padding:1rem;
+    
+}
+.music{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+}
+.music button{
+    background-color: black;
+    color: white;
+    padding: 1rem 6rem;
+    margin-top: 4rem;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.music ul{
+    text-align: center;
+    list-style: none;
+
+}
+.music ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color:#FFf;
+    margin:0.5rem;
+}
+.music ul li:first-of-type a{
+    background-color: rgb(76, 76, 161);
+    padding:1rem 6rem;
+    display: inline-block;
+}
+.music ul li:nth-of-type(2) a{
+    background-color: darkblue;
+    padding:1rem 5rem;
+    display: inline-block;
+}
+.music ul li:last-of-type a{
+    background-color: yellow;
+    padding:1rem 6rem;
+    display: inline-block;
+}
+.border{
+    border: 4px solid green;
+}
