@@ -10,7 +10,7 @@ let user1 = document.querySelector(".user1")
 let anchors = document.querySelectorAll(".music a")
 let border = document.querySelector(".border")
 let options = document.querySelectorAll(".music input")
-let startquiz = document.querySelector(".music button")
+let startquiz = document.querySelector("#start-btn")
 start.onclick = (e) =>{
     e.preventDefault()
     if(user.innerHTML.length===0){
@@ -28,15 +28,31 @@ create.onclick = () =>{
 }
 adduser.onclick = (e) => {
     e.preventDefault()
-    user.style.display = 'block'
-    create.style.display = "none"
     createuser.style.display = "none"
     user.innerHTML = uname.value
-    alert("user created")
-}
-for(let i = 0; i<anchors.length;i++){
-    anchors[i].onclick = (e) =>{
-        e.preventDefault()
-        anchors[i].classList.add("border")
+    if(uname.value.length === 0 ){
+        alert("user name cant be empty")
+    }
+    else{
+        alert("user created")
+        create.style.display = "none"
+        user.style.display = 'block'
     }
 }
+
+
+  startquiz.onclick = () =>{
+    const selectedOption = document.querySelector('input[name="option"]:checked').value;
+    if(selectedOption === "Music"){
+        console.log("gana chalado")
+    }
+    else if(selectedOption === "Modern Art"){
+        console.log("tasweer dikha do")
+    }
+    else if(selectedOption === "Coding"){
+        slide2.style.display = "none"
+    }
+  }
+
+   
+  
