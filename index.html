@@ -51,14 +51,45 @@
         </div>
         <div class="music">
             <label>Select an option:</label>
-            <input type="radio" name="option" value="Music" checked> Option 1
-            <input type="radio" name="option" value="Modern Art"> Option 2
-            <input type="radio" name="option" value="Coding"> Option 3
+            <input type="radio" name="option" value="Music" checked> Music
+            <input type="radio" name="option" value="Modern Art"> Modern Art
+            <input type="radio" name="option" value="Coding"> Coding
             <button id="start-btn">Start</button>
         </div>
 
 
     </div>
+    <div class="codingqs">
+        <div class="timeline">
+            <h1>Coding quiz</h1><span>15</span>
+        </div> 
+        <div class="qarea">
+            <div id="quest">
+                <h1 class="question"></h1>
+                <ul>
+                    <li><input type="radio" name="answer" id="ans1" class="answer">
+                        <label for="ans1" id="option1">answer option</label>
+                    </li>
+                    <li><input type="radio" name="answer" id="ans2" class="answer">
+                        <label for="ans2" id="option2">answer option</label>
+                    </li>
+                    <li><input type="radio" name="answer" id="ans3" class="answer">
+                        <label for="ans3" id="option3">answer option</label>
+                    </li>
+                    <li><input type="radio" name="answer" id="ans4" class="answer">
+                        <label for="ans4" id="option4">answer option</label>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="btnn">
+                <button id="next-btn">Next</button>
+                <button id="quit-btn">Quit</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="score"><h1></h1></div>
     <script src="quiz.js"></script>
 </body>
 
