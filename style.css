@@ -33,7 +33,7 @@
     color: red;
 }
 .knowledge h1{
-    margin:2rem 0;
+    margin:2rem auto;
     width: 60%;
     font-size: 35px;
 }
@@ -43,6 +43,7 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    
 }
  .input{
     position: absolute;
@@ -91,6 +92,22 @@
     text-align: center;
     padding:1rem;
     
+}
+.music label {
+    cursor: pointer;
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+.music label:first-of-type,.music label:nth-of-type(2),.music label:last-of-type {
+    background-color: blue;
+    color: white;
+    display: inline-block;
+    height: 52px;
+    width: 420px;
+    padding: 7px 0;
+    border-radius: 20px;
+    text-align: center;
 }
 .music{
     display: flex;
@@ -166,15 +183,55 @@
 }
 .btnn button{
     background-color: black;
+    border-radius: 5px;
     color: white;
     padding: 1rem;
+    margin: 1rem;
 }
-.qarea #question h1{
+
+.qarea #quest h1{
     margin: 3rem 4rem 1rem;
+}
+.qarea ul li{
+    list-style: none;
+    padding: 0.5rem;
+    margin-left: 3rem; ;
 }
 .score{
     height: 100vh;
-    display: block;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: orange;
+}
+.btnn{
+    display: flex;
+    justify-content: center;
+}
+.score button,.back button{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    margin: 1rem;
+    border-radius: 5px;
+}
+.prev{
+    background-color: aqua;
+    height: 100vh;
+    display: none;
+}
+.previousscore{
+    background-color: blueviolet;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back{
+    display: flex;
     align-items: center;
     justify-content: center;
 }
+
+

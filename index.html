@@ -39,9 +39,9 @@
         <div class="quiz">
             <h1>Quiz pop</h1>
             <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">quiz</a></li>
-                <li><a href="">score</a></li>
+                <li class="home"><a href="">home</a></li>
+                <li class="quizz"><a href="">quiz</a></li>
+                <li class="loadscore"><a href="">score</a></li>
             </ul>
             <h3 class="user1"></h3>
         </div>
@@ -50,10 +50,12 @@
             <h2>select topic</h2>
         </div>
         <div class="music">
-            <label>Select an option:</label>
-            <input type="radio" name="option" value="Music" checked> Music
-            <input type="radio" name="option" value="Modern Art"> Modern Art
-            <input type="radio" name="option" value="Coding"> Coding
+            <input type="radio" name="option" value="Music">
+            <label for="music">Music</label><br>
+            <input type="radio" name="option" value="Modern Art">
+            <label for="modern Art">Modern Art</label><br>
+            <input type="radio" name="option" value="Coding">
+            <label for="coding">Coding</label><br>
             <button id="start-btn">Start</button>
         </div>
 
@@ -89,7 +91,16 @@
         </div>
 
     </div>
-    <div class="score"><h1></h1></div>
+    <div class="score"><div class="scorecard"><h1></h1></div>
+        <div class="scorebtn"><button class="Playagain">Playagain</button> <button class="quit">quit</button></div>
+    </div>
+    <div class="prev">
+        <div class="previousscore">
+            <h1></h1>
+        </div>
+        <div class="back"><button class="goback">Go back</button></div>
+        
+    </div>
     <script src="quiz.js"></script>
 </body>
 

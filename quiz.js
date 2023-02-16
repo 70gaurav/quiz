@@ -12,6 +12,7 @@ let border = document.querySelector(".border")
 let options = document.querySelectorAll(".music input")
 let startquiz = document.querySelector("#start-btn")
 let codeqs = document.querySelector(".codingqs")
+let previousscore = document.querySelector(".previousscore h1")
 function checkuser() {
   if (sessionStorage.getItem('name')) {
     user.innerHTML = sessionStorage.getItem('name')
@@ -57,15 +58,23 @@ adduser.onclick = (e) => {
 startquiz.onclick = () => {
   const selectedOption = document.querySelector('input[name="option"]:checked').value;
   if (selectedOption === "Music") {
-    console.log("gana chalado")
+    sessionStorage.setItem("quizname", "Music")
+    slide2.style.display = "none"
+    codeqs.style.display = "flex"
+    loadQuestion(MusicDb)
   }
   else if (selectedOption === "Modern Art") {
-    console.log("tasweer dikha do")
+    sessionStorage.setItem("quizname", "ModernArt")
+    slide2.style.display = "none"
+    codeqs.style.display = "flex"
+    loadQuestion(modernArtQuizQuestions)
   }
   else if (selectedOption === "Coding") {
     slide2.style.display = "none"
     codeqs.style.display = "flex"
-    loadQuestion()
+    sessionStorage.setItem("quizname", "coding")
+    loadQuestion(quizDB)
+    settimer()
 
   }
 }
@@ -153,56 +162,289 @@ const quizDB = [
     ans: "ans4"
   }
 ]
+const modernArtQuizQuestions = [
+  {
+    question: 'Q1:Which artist is known for his "Campbell\'s Soup Cans" painting series?',
+    a: 'Pablo Picasso',
+    b: 'Andy Warhol',
+    c: 'Vincent van Gogh',
+    d: 'Salvador Dali',
+    ans: 'ans2'
+  },
+  {
+    question: 'Q2:What is the name of the Dutch painter who created "The Starry Night"?',
+    a: 'Rembrandt van Rijn',
+    b: 'Jan Vermeer',
+    c: 'Johannes Vermeer',
+    d: 'Vincent van Gogh',
+    ans: 'ans4'
+  },
+  {
+    question: 'Q3:Which artist is known for his "drip painting" technique?',
+    a: 'Pablo Picasso',
+    b: 'Jackson Pollock',
+    c: 'Salvador Dali',
+    d: 'Claude Monet',
+    ans: 'ans2'
+  },
+  {
+    question: 'Q4:What is the name of the artist who created the "Black Square" painting?',
+    a: 'Kazimir Malevich',
+    b: 'Piet Mondrian',
+    c: 'Wassily Kandinsky',
+    d: 'Marcel Duchamp',
+    ans: 'ans1'
+  },
+  {
+    question: 'Q5:Which female artist is known for her abstract expressionist paintings?',
+    a: 'Frida Kahlo',
+    b: 'Joan Mitchell',
+    c: 'Georgia O\'Keeffe',
+    d: 'Louise Bourgeois',
+    ans: 'ans2'
+  },
+  {
+    question: 'Q6:What is the name of the artist who created the "Guernica" painting, which depicts the bombing of a Spanish town during the Spanish Civil War?',
+    a: 'Pablo Picasso',
+    b: 'Salvador Dali',
+    c: 'Claude Monet',
+    d: 'Vincent van Gogh',
+    ans: 'ans1'
+  },
+  {
+    question: 'Q7:Who created the sculpture "The Thinker", which depicts a man in deep thought?',
+    a: 'Auguste Rodin',
+    b: 'Alberto Giacometti',
+    c: 'Henry Moore',
+    d: 'Constantin Brancusi',
+    ans: 'ans1'
+  }]
+const MusicDb = [{
+  question: "Q1:What was the first music video played on MTV?",
+  a: "Thriller by Michael Jackson",
+  b: "Video Killed the Radio Star by The Buggles",
+  c: "I Want My MTV by Dire Straits",
+  d: "Billie Jean by Michael Jackson",
+  ans: "ans2"
+},
+{
+  question: "Q2:What is the best-selling album of all time?",
+  a: "The Bodyguard Soundtrack by Whitney Houston",
+  b: "Back in Black by AC/DC",
+  c: "Thriller by Michael Jackson",
+  d: "The Dark Side of the Moon by Pink Floyd",
+  ans: "ans3"
+},
+{
+  question: "Q3:Who won the first American Idol competition in 2002?",
+  a: "Kelly Clarkson",
+  b: "Carrie Underwood",
+  c: "Ruben Studdard",
+  d: "Fantasia Barrino",
+  ans: "ans1"
+},
+{
+  question: "Q4:Which band recorded the album 'Dark Side of the Moon'?",
+  a: "Led Zeppelin",
+  b: "The Beatles",
+  c: "Pink Floyd",
+  d: "The Rolling Stones",
+  ans: "ans3"
+},
+{
+  question: "Q5:Which pop star released an album titled '1989'?",
+  a: "Taylor Swift",
+  b: "Adele",
+  c: "Lady Gaga",
+  d: "Beyoncé",
+  ans: "ans1"
+},
+{
+  question: "Q6:Which of these is NOT a Beatles song?",
+  a: "Hey Jude", b:
+    "Yellow Submarine",
+  c: "Bohemian Rhapsody",
+  d: "Let it Be",
+  ans: "ans3"
+},
+{
+  question: "Q7:What was the first music album to be released on CD?",
+  a: "Brothers in Arms by Dire Straits",
+  b: "Thriller by Michael Jackson",
+  c: "The Beatles (White Album) by The Beatles",
+  d: "Parallel Lines by Blondie",
+  ans: "ans1"
+},
+{
+  question: "Q8:Which pop singer was born Stefani Joanne Angelina Germanotta?",
+  a: "Katy Perry",
+  b: "Lady Gaga",
+  c: "Rihanna",
+  d: "Adele",
+  ans: "ans2"
+},
+{
+  question: "Q9:Which band had a hit in the 1990s with the song 'Losing My Religion'?",
+  a: "Nirvana",
+  b: "Pearl Jam",
+  c: "REM",
+  d: "Soundgarden",
+  ans: "ans3"
+},
+{
+  question: "Q10:Which of these is a song by the rock band Queen?",
+  a: "Purple Haze",
+  b: "Sweet Child O' Mine",
+  c: "Bohemian Rhapsody",
+  d: "Stairway to Heaven",
+  ans: "ans3"
+}]
+
 let question = document.querySelector(".question")
 let option1 = document.querySelector("#option1")
 let option2 = document.querySelector("#option2")
 let option3 = document.querySelector("#option3")
 let option4 = document.querySelector("#option4")
 let nextbtn = document.querySelector("#next-btn")
-let quitbtn = document.querySelector("quit-btn")
+let quitbtn = document.querySelector("#quit-btn")
 let answers = document.querySelectorAll(".answer")
+let home = document.querySelector(".home")
+home.onclick = (e) => {
+e.preventDefault()
+slide2.style.display = "none"
+slide.style.display = "block"
+}
 
 let questionCount = 0
-let loadQuestion = () => {
-  let questionList = quizDB[questionCount]
-  question.innerHTML= questionList.question
-  option1.innerHTML= questionList.a
-  option2.innerHTML= questionList.b
-  option3.innerHTML= questionList.c
-  option4.innerHTML= questionList.d
-  
+let loadQuestion = (data) => {
+  let questionList = data[questionCount]
+  question.innerHTML = questionList.question
+  option1.innerHTML = questionList.a
+  option2.innerHTML = questionList.b
+  option3.innerHTML = questionList.c
+  option4.innerHTML = questionList.d
+
 
 }
 getCheckedAnswer = () => {
   let answer;
   answers.forEach((curAnsElem) => {
-    if(curAnsElem.checked){
+    if (curAnsElem.checked) {
       answer = curAnsElem.id
     }
   })
   return answer
 }
-let totalscore = document.querySelector(".score h1")
+let time = document.querySelector(".timeline span")
+function settimer (){
+  setInterval(() =>{
+    if(time.innerHTML=0){
+      time.innerHTML= 15
+    }
+    else{
+      time.innerHTML=Number(time.innerHTML)-1
+    }
+  })
+}
+let totalscore = document.querySelector(".scorecard h1")
 let scoreslide = document.querySelector(".score")
 let score = 0
 nextbtn.onclick = () => {
   let checkedAnswer = getCheckedAnswer()
-  console.log(checkedAnswer)
-  if(checkedAnswer === quizDB[questionCount].ans){
-    score++ 
-    console.log(score)
-  }
-  questionCount++
-  if(questionCount< quizDB.length){
-    loadQuestion()
-  }
-  else{
-    totalscore.innerHTML = score
-    codeqs.style.display = "none"
-    scoreslide.style.display = "flex"
+  if (sessionStorage.getItem("quizname") === "coding") {
+    if (checkedAnswer === quizDB[questionCount].ans) {
+      score++
+      console.log(score)
+    }
+    questionCount++
+    if (questionCount < quizDB.length) {
+      loadQuestion(quizDB)
+    }
+    else {
+      questionCount = 0
+     let scored = "You have Scored " + score + " " + "out of 10 in" + " " + sessionStorage.getItem("quizname") + "quiz"
+     totalscore.innerHTML = scored
+     sessionStorage.setItem("last score", "In your last quiz"+ scored)
+     previousscore.innerHTML = sessionStorage.getItem("last score")
+      sessionStorage.setItem("you have scored ", score)
+      codeqs.style.display = "none"
+      scoreslide.style.display = "flex"
 
+    }
+  }
+  if (sessionStorage.getItem("quizname") === "ModernArt") {
+    if (checkedAnswer === modernArtQuizQuestions[questionCount].ans) {
+      score++
+      console.log(score)
+    }
+    questionCount++
+    if (questionCount < modernArtQuizQuestions.length) {
+      loadQuestion(modernArtQuizQuestions)
+    }
+    else {
+      questionCount = 0
+      let scored = "You have Scored " + score + " " + "out of 7 in" + " " + sessionStorage.getItem("quizname") + "quiz"
+      totalscore.innerHTML = scored
+      sessionStorage.setItem("last score", "In your last quiz"+ scored)
+      previousscore.innerHTML = sessionStorage.getItem("last score")
+      sessionStorage.setItem("you have scored ", score)
+      codeqs.style.display = "none"
+      scoreslide.style.display = "flex"
+
+    }
+  }
+  if (sessionStorage.getItem("quizname") === "Music") {
+    if (checkedAnswer === MusicDb[questionCount].ans) {
+      score++
+      console.log(score)
+    }
+    questionCount++
+    if (questionCount < MusicDb.length) {
+      loadQuestion(MusicDb)
+    }
+    else {
+      questionCount = 0
+      let scored = "You have Scored " + score + " " + "out of 10 in" + " " + sessionStorage.getItem("quizname") + "quiz"
+      totalscore.innerHTML = scored
+      sessionStorage.setItem("last score", "In your last quiz"+ scored)
+      previousscore.innerHTML = sessionStorage.getItem("last score")
+      sessionStorage.setItem("you have scored ", score)
+      codeqs.style.display = "none"
+      scoreslide.style.display = "flex"
+
+    }
   }
 }
+quitbtn.onclick = () => {
+  alert("don't quit you can do this")
+
+}
+let playagain = document.querySelector(".Playagain")
+let quit = document.querySelector(".quit")
+let prev = document.querySelector(".prev")
+  playagain.onclick = () => {
+  scoreslide.style.display = "none"
+  slide2.style.display = "block"
+}
+quit.onclick =() => {
+  scoreslide.style.display = "none"
+  slide2.style.display = "block"
+
+}
+let loadscore = document.querySelector(".loadscore a")
+loadscore.onclick = (e) =>{
+e.preventDefault()
+slide2.style.display = "none"
+prev.style.display = "block"
+}
+let goback = document.querySelector(".goback")
+goback.onclick = () =>{
+  slide2.style.display = "block"
+prev.style.display = "none"
+}
+
+
+
 
 
 
