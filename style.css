@@ -43,6 +43,8 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
+}
+.start{
     margin-left: 8rem;
 }
  .input{
@@ -92,6 +94,9 @@
     text-align: center;
     padding:1rem;
     
+}
+.timeline span i{
+    font-size: 40px;
 }
 .music label {
     cursor: pointer;

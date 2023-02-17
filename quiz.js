@@ -336,16 +336,6 @@ getCheckedAnswer = () => {
   return answer
 }
 let time = document.querySelector(".timeline span")
-function settimer (){
-  setInterval(() =>{
-    if(time.innerHTML=0){
-      time.innerHTML= 15
-    }
-    else{
-      time.innerHTML=Number(time.innerHTML)-1
-    }
-  })
-}
 let totalscore = document.querySelector(".scorecard h1")
 let scoreslide = document.querySelector(".score")
 let score = 0
