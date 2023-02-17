@@ -57,24 +57,27 @@ adduser.onclick = (e) => {
 
 startquiz.onclick = () => {
   const selectedOption = document.querySelector('input[name="option"]:checked').value;
+  console.log(selectedOption)
   if (selectedOption === "Music") {
     sessionStorage.setItem("quizname", "Music")
     slide2.style.display = "none"
     codeqs.style.display = "flex"
     loadQuestion(MusicDb)
+    timer()
   }
   else if (selectedOption === "Modern Art") {
     sessionStorage.setItem("quizname", "ModernArt")
     slide2.style.display = "none"
     codeqs.style.display = "flex"
     loadQuestion(modernArtQuizQuestions)
+    timer()
   }
   else if (selectedOption === "Coding") {
     slide2.style.display = "none"
     codeqs.style.display = "flex"
     sessionStorage.setItem("quizname", "coding")
     loadQuestion(quizDB)
-    settimer()
+    timer()
 
   }
 }
@@ -310,9 +313,9 @@ let quitbtn = document.querySelector("#quit-btn")
 let answers = document.querySelectorAll(".answer")
 let home = document.querySelector(".home")
 home.onclick = (e) => {
-e.preventDefault()
-slide2.style.display = "none"
-slide.style.display = "block"
+  e.preventDefault()
+  slide2.style.display = "none"
+  slide.style.display = "block"
 }
 
 let questionCount = 0
@@ -352,10 +355,10 @@ nextbtn.onclick = () => {
     }
     else {
       questionCount = 0
-     let scored = "You have Scored " + score + " " + "out of 10 in" + " " + sessionStorage.getItem("quizname") + "quiz"
-     totalscore.innerHTML = scored
-     sessionStorage.setItem("last score", "In your last quiz"+ scored)
-     previousscore.innerHTML = sessionStorage.getItem("last score")
+      let scored = "You have Scored " + score + " " + "out of 10 in" + " " + sessionStorage.getItem("quizname") + "quiz"
+      totalscore.innerHTML = scored
+      sessionStorage.setItem("last score", "In your last quiz" + scored)
+      previousscore.innerHTML = sessionStorage.getItem("last score")
       sessionStorage.setItem("you have scored ", score)
       codeqs.style.display = "none"
       scoreslide.style.display = "flex"
@@ -375,7 +378,7 @@ nextbtn.onclick = () => {
       questionCount = 0
       let scored = "You have Scored " + score + " " + "out of 7 in" + " " + sessionStorage.getItem("quizname") + "quiz"
       totalscore.innerHTML = scored
-      sessionStorage.setItem("last score", "In your last quiz"+ scored)
+      sessionStorage.setItem("last score", "In your last quiz" + scored)
       previousscore.innerHTML = sessionStorage.getItem("last score")
       sessionStorage.setItem("you have scored ", score)
       codeqs.style.display = "none"
@@ -396,7 +399,7 @@ nextbtn.onclick = () => {
       questionCount = 0
       let scored = "You have Scored " + score + " " + "out of 10 in" + " " + sessionStorage.getItem("quizname") + "quiz"
       totalscore.innerHTML = scored
-      sessionStorage.setItem("last score", "In your last quiz"+ scored)
+      sessionStorage.setItem("last score", "In your last quiz" + scored)
       previousscore.innerHTML = sessionStorage.getItem("last score")
       sessionStorage.setItem("you have scored ", score)
       codeqs.style.display = "none"
@@ -405,6 +408,23 @@ nextbtn.onclick = () => {
     }
   }
 }
+let quiztime = document.querySelector(".timeline span")
+function timer() {
+  setInterval(() => {
+    if (quiztime.innerHTML > 0) {
+
+      quiztime.innerHTML = Number(quiztime.innerHTML) - 1
+    }
+    else {
+      quiztime.innerHTML = "15"
+      if (sessionStorage.getItem("quizname") === "Music") {
+        questionCount++
+        MusicDb()
+      }
+    }
+    }, 1000)
+}
+
 quitbtn.onclick = () => {
   alert("don't quit you can do this")
 
@@ -412,25 +432,25 @@ quitbtn.onclick = () => {
 let playagain = document.querySelector(".Playagain")
 let quit = document.querySelector(".quit")
 let prev = document.querySelector(".prev")
-  playagain.onclick = () => {
+playagain.onclick = () => {
   scoreslide.style.display = "none"
   slide2.style.display = "block"
 }
-quit.onclick =() => {
+quit.onclick = () => {
   scoreslide.style.display = "none"
   slide2.style.display = "block"
 
 }
 let loadscore = document.querySelector(".loadscore a")
-loadscore.onclick = (e) =>{
-e.preventDefault()
-slide2.style.display = "none"
-prev.style.display = "block"
+loadscore.onclick = (e) => {
+  e.preventDefault()
+  slide2.style.display = "none"
+  prev.style.display = "block"
 }
 let goback = document.querySelector(".goback")
-goback.onclick = () =>{
+goback.onclick = () => {
   slide2.style.display = "block"
-prev.style.display = "none"
+  prev.style.display = "none"
 }
 
 

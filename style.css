@@ -1,111 +1,139 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto';
 }
-.wrapper{
+
+.wrapper {
     height: 100vh;
 }
-.head{
+
+.head {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 3rem 0;
     height: 20%;
 }
-.head h2:last-of-type{
+
+.head h2:last-of-type {
     background-color: black;
     color: white;
     padding: 0.5rem;
     border-radius: 5px;
 }
-.slide1{
+
+.slide1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: aquamarine;
     height: 80%;
 }
-.knowledge,.bulb{
+
+.knowledge,
+.bulb {
     width: 40%;
 }
-.knowledge span{
+
+.knowledge span {
     color: red;
 }
-.knowledge h1{
-    margin:2rem auto;
+
+.knowledge h1 {
+    margin: 2rem auto;
     width: 60%;
     font-size: 35px;
 }
-.knowledge a{
+
+.knowledge a {
     padding: 0.5rem;
     background-color: black;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
-.start{
+
+.start {
     margin-left: 8rem;
 }
- .input{
+
+.input {
     position: absolute;
-    top:30%;
-    left:35% ;
+    top: 30%;
+    left: 35%;
     background-color: rgb(235, 132, 149);
-    padding:20px;
+    padding: 20px;
     font-size: 20px;
     display: none;
 }
- .input input{
-    height:50px;
-    width:400px;
+
+.input input {
+    height: 50px;
+    width: 400px;
     margin-bottom: 30px;
 }
-.user{
+
+.user {
     display: none;
 }
-.slide2{
+
+.slide2 {
     background-color: rgb(174, 170, 170);
     display: none;
     height: 100vh;
 }
-.slide2 .quiz{
+
+.slide2 .quiz {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-evenly;
     height: 70px;
     background-color: lightsteelblue;
+
 }
-.slide2 .quiz ul{
+
+.slide2 .quiz ul {
     display: flex;
     font-size: 20px;
     list-style: none;
+    margin-right: 3rem;
 }
-.slide2 .quiz ul li a{
+
+.slide2 .quiz ul li a {
     text-decoration: none;
-    color:black;
-    padding:10px;
+    color: white;
+    padding: 10px;
+    background-color: black;
+    margin: 0 0.5rem;
+    border-radius: 10px;
+}
+
+.slide2 .welcome {
+    padding: 2rem;
+}
+
+.slide2 .welcome h1,
+h2 {
+    text-align: center;
+    padding: 1rem;
 
 }
-.slide2 .welcome{
-    padding:2rem;
-}
-.slide2 .welcome h1,h2{
-    text-align: center;
-    padding:1rem;
-    
-}
-.timeline span i{
+
+.timeline span i {
     font-size: 40px;
 }
+
 .music label {
     cursor: pointer;
     font-size: 27px;
     margin-top: 10px;
 }
 
-.music label:first-of-type,.music label:nth-of-type(2),.music label:last-of-type {
+.music label:first-of-type,
+.music label:nth-of-type(2),
+.music label:last-of-type {
     background-color: blue;
     color: white;
     display: inline-block;
@@ -115,13 +143,15 @@
     border-radius: 20px;
     text-align: center;
 }
-.music{
+
+.music {
     display: flex;
     flex-direction: column;
-    align-items:center ;
+    align-items: center;
     justify-content: center;
 }
-.music button{
+
+.music button {
     background-color: black;
     color: white;
     padding: 1rem 6rem;
@@ -129,36 +159,43 @@
     font-size: 20px;
     border-radius: 5px;
 }
-.music ul{
+
+.music ul {
     text-align: center;
     list-style: none;
 
 }
-.music ul li a{
+
+.music ul li a {
     text-decoration: none;
     font-size: 20px;
-    color:#FFf;
-    margin:0.5rem;
+    color: #FFf;
+    margin: 0.5rem;
 }
-.music ul li:first-of-type a{
+
+.music ul li:first-of-type a {
     background-color: rgb(76, 76, 161);
-    padding:1rem 6rem;
+    padding: 1rem 6rem;
     display: inline-block;
 }
-.music ul li:nth-of-type(2) a{
+
+.music ul li:nth-of-type(2) a {
     background-color: darkblue;
-    padding:1rem 5rem;
+    padding: 1rem 5rem;
     display: inline-block;
 }
-.music ul li:last-of-type a{
+
+.music ul li:last-of-type a {
     background-color: yellow;
-    padding:1rem 6rem;
+    padding: 1rem 6rem;
     display: inline-block;
 }
-.border{
+
+.border {
     border: 4px solid green;
 }
-.codingqs{
+
+.codingqs {
     background-color: yellow;
     height: 100vh;
     flex-direction: column;
@@ -166,13 +203,15 @@
     justify-content: center;
     display: none;
 }
+
 .timeline {
     height: 10%;
     width: 60%;
     display: flex;
     justify-content: space-between;
 }
-.timeline span{
+
+.timeline span {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -181,13 +220,15 @@
     width: 50px;
     border-radius: 50%;
 }
-.qarea{
+
+.qarea {
     background-color: white;
     height: 60%;
     width: 60%;
     border-radius: 20px;
 }
-.btnn button{
+
+.btnn button {
     background-color: black;
     border-radius: 5px;
     color: white;
@@ -195,15 +236,18 @@
     margin: 1rem;
 }
 
-.qarea #quest h1{
+.qarea #quest h1 {
     margin: 3rem 4rem 1rem;
 }
-.qarea ul li{
+
+.qarea ul li {
     list-style: none;
     padding: 0.5rem;
-    margin-left: 3rem; ;
+    margin-left: 3rem;
+    ;
 }
-.score{
+
+.score {
     height: 100vh;
     display: none;
     align-items: center;
@@ -211,33 +255,115 @@
     flex-direction: column;
     background-color: orange;
 }
-.btnn{
+
+.btnn {
     display: flex;
     justify-content: center;
 }
-.score button,.back button{
+
+.score button,
+.back button {
     padding: 1rem;
     background-color: black;
     color: white;
     margin: 1rem;
     border-radius: 5px;
 }
-.prev{
+
+.prev {
     background-color: aqua;
     height: 100vh;
     display: none;
 }
-.previousscore{
+
+.previousscore {
     background-color: blueviolet;
     height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.back{
+
+.back {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+@media all and (max-width: 1050px) {
+    .bulb img {
+        width: 300px;
+    }
 
+}
+
+@media all and (max-width: 810px) {
+
+    .knowledge,
+    .bulb {
+        width: 42%;
+    }
+
+}
+
+@media all and (max-width: 660px) {
+    .knowledge h1 {
+        margin: 2rem auto;
+        width: 62%;
+        font-size: 30px;
+    }
+
+    .bulb img {
+        width: 210px;
+    }
+
+}
+
+@media all and (max-width: 550px) {
+    .music button {
+
+        padding: 1rem 3rem;
+        margin-top: 2rem;
+    }
+
+    .music label:first-of-type,
+    .music label:nth-of-type(2),
+    .music label:last-of-type {
+        height: 50px;
+        width: 250px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .knowledge h1 {
+        margin: 0rem auto;
+        width: 70%;
+        font-size: 25px;
+        height: auto;
+    }
+
+    .start {
+        margin-left: 1rem;
+        margin-top: 2rem;
+        padding: 10px;
+    }
+
+    .knowledge {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media all and (max-width: 480px) {
+    .quiz h1 {
+        font-size: 18px;
+    }
+
+    .bulb img {
+        width: 150px;
+    }
+
+}
