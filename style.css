@@ -296,6 +296,14 @@ h2 {
     }
 
 }
+@media all and (max-width:900px){
+    .quest h1{
+        font-size: 15px;
+    }
+    .qarea{
+        width: 80%;
+    }
+}
 
 @media all and (max-width: 810px) {
 
@@ -315,6 +323,13 @@ h2 {
 
     .bulb img {
         width: 210px;
+    }
+    .qarea #quest h1 {
+        font-size: 22px;
+    }
+    .qarea{
+        width: 90%;
+        height: 80%;
     }
 
 }
