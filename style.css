@@ -313,6 +313,15 @@ h2 {
     }
 
 }
+@media all and (max-width: 690px) {
+    .input {
+        
+        top: 20%;
+        left: 20%;
+    }
+    
+
+}
 
 @media all and (max-width: 660px) {
     .knowledge h1 {
@@ -329,7 +338,7 @@ h2 {
     }
     .qarea{
         width: 90%;
-        height: 80%;
+        height: 70%;
     }
 
 }
@@ -339,6 +348,16 @@ h2 {
 
         padding: 1rem 3rem;
         margin-top: 2rem;
+    }
+    .input {
+        
+        top: 20%;
+        left: 17%;
+        
+    }
+    .input input {
+        height: 50px;
+        width: 300px;
     }
 
     .music label:first-of-type,
@@ -379,6 +398,12 @@ h2 {
 
     .bulb img {
         width: 150px;
+    }
+    .input {
+        
+        top: 20%;
+        left: 10%;
+        
     }
 
 }
