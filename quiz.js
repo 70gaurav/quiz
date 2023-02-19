@@ -419,7 +419,15 @@ function timer() {
       quiztime.innerHTML = "15"
       if (sessionStorage.getItem("quizname") === "Music") {
         questionCount++
-        MusicDb()
+       loadQuestion(MusicDb)
+      }
+      if (sessionStorage.getItem("quizname") === "ModernArt") {
+        questionCount++
+        loadQuestion(modernArtQuizQuestions)
+      }
+      if (sessionStorage.getItem("quizname") === "coding") {
+        questionCount++
+        loadQuestion(quizDB)
       }
     }
     }, 1000)
